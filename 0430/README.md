@@ -1,6 +1,6 @@
-https://sleepy-inlet-17895.herokuapp.com/mothers_day
+https://jaspersui.herokuapp.com/mothers_day
 
-https://sleepy-inlet-17895.herokuapp.com/blog
+https://jaspersui.herokuapp.com/blog
 
 admin
 P@ssword
