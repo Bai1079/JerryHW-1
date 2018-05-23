@@ -1,0 +1,97 @@
+<script>
+	var temp = 0;
+    var strOper=0;
+    var valueA=0;
+    
+    function numStr(str){
+    	if (document.getElementById("total").value == 0){
+    	document.getElementById("total").value=str;
+        }else{
+        document.getElementById("total").value+=str;
+        }
+    
+    }
+
+    function Clear(){
+        document.getElementById("total").value = 0;
+        valueA=0;
+    }
+    
+    function operStr(str){
+    
+    	equal();
+        
+        valueA=document.getElementById("total").value;
+        strOper=str;
+
+        document.getElementById("total").value=0;
+    
+    }
+    
+    function equal(){ 
+
+        switch (strOper){
+            case '+':
+               	document.getElementById("total").value=parseInt(valueA)+parseInt(document.getElementById("total").value);
+            	break;
+                
+            case '-':
+                document.getElementById("total").value=parseInt(valueA)-parseInt(document.getElementById("total").value);
+            break;
+            
+            case '*':
+                document.getElementById("total").value=parseInt(valueA)*parseInt(document.getElementById("total").value);
+            break;
+            
+            case '/':
+                document.getElementById("total").value=parseInt(valueA)/parseInt(document.getElementById("total").value);
+            break;
+            
+            default:
+                break;
+        }
+        
+        temp=null;
+        strOper=null;
+	}
+
+    function Check(){
+        if (document.getElementById("grade").value >= 60 && document.getElementById("grade").value <=100){
+            alert("非常好");
+        }else if (document.getElementById("grade").value < 60 && document.getElementById("grade").value >= 0){
+            alert("不及格");
+        }else{
+            alert("請輸入0~100的數字。")
+        }
+    }
+
+    
+</script>
+作業一
+<form>
+	<input type=text name="total" id="total" value="0">
+	<input type=button value="Clear" onClick="Clear()"><br><br>
+    <input type=button value="1" onClick="numStr('1')">
+    <input type=button value="2" onClick="numStr('2')">
+    <input type=button value="3" onClick="numStr('3')">
+    <input type=button value="+" onClick="operStr('+')"><br><br>
+    <input type=button value="4" onClick="numStr('4')">
+    <input type=button value="5" onClick="numStr('5')">
+    <input type=button value="6" onClick="numStr('6')">
+    <input type=button value="-" onClick="operStr('-')"><br><br>
+    <input type=button value="7" onClick="numStr('7')">
+    <input type=button value="8" onClick="numStr('8')">
+    <input type=button value="9" onClick="numStr('9')">
+    <input type=button value="*" onClick="operStr('*')"><br><br>
+    <input type=button value="0" onClick="numStr('0')">
+    <input type="button" value="=" onClick="equal()">
+    <input type=button value="/" onClick="operStr('/')"><br><br>
+
+</form>
+
+<br>
+作業二
+<form>
+    <input type="text" id="grade">
+    <input type="button" value="檢查成績" onClick="Check()">
+</form>
